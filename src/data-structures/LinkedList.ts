@@ -27,12 +27,24 @@ export class LinkedList<T> {
 
   /** Insert a node at the beginning. O(1) */
   prepend(value: T): void {
-    // TODO: implement
+    const newNode = new ListNode(value, this.head);
+    this.head = newNode;
+    this.size++;
   }
 
   /** Insert a node at the end. O(n) */
   append(value: T): void {
-    // TODO: implement
+    let current = this.head;
+    if (!current) return this.prepend(value);
+
+    while (current) {
+      if (current.next === null) {
+        current.next = new ListNode(value);
+        this.size++;
+        return;
+      }
+      current = current.next;
+    }
   }
 
   /** Remove the first node with the given value. O(n) */
@@ -43,14 +55,31 @@ export class LinkedList<T> {
 
   /** Return the index of the first node with the given value, or -1. O(n) */
   search(value: T): number {
-    // TODO: implement
+    let current = this.head;
+    let index = 0;
+
+    while (current) {
+      if (current.value === value) {
+        return index;
+      }
+      current = current.next;
+      index++;
+    }
     return -1;
   }
 
   /** Convert the list to an array. O(n) */
   toArray(): T[] {
-    // TODO: implement
-    return [];
+    let arr: T[] = [];
+    let current = this.head;
+
+    if (current === null) return arr;
+
+    while (current) {
+      arr.push(current.value);
+      current = current.next;
+    }
+    return arr;
   }
 
   get length(): number {
