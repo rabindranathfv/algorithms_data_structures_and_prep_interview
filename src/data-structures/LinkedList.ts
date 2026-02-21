@@ -27,67 +27,30 @@ export class LinkedList<T> {
 
   /** Insert a node at the beginning. O(1) */
   prepend(value: T): void {
-    const node = new ListNode(value, this.head);
-    this.head = node;
-    this.size++;
+    // TODO: implement
   }
 
   /** Insert a node at the end. O(n) */
   append(value: T): void {
-    const node = new ListNode(value);
-    if (!this.head) {
-      this.head = node;
-    } else {
-      let current = this.head;
-      while (current.next) current = current.next;
-      current.next = node;
-    }
-    this.size++;
+    // TODO: implement
   }
 
   /** Remove the first node with the given value. O(n) */
   delete(value: T): boolean {
-    if (!this.head) return false;
-
-    if (this.head.value === value) {
-      this.head = this.head.next;
-      this.size--;
-      return true;
-    }
-
-    let current = this.head;
-    while (current.next) {
-      if (current.next.value === value) {
-        current.next = current.next.next;
-        this.size--;
-        return true;
-      }
-      current = current.next;
-    }
+    // TODO: implement
     return false;
   }
 
   /** Return the index of the first node with the given value, or -1. O(n) */
   search(value: T): number {
-    let current = this.head;
-    let index = 0;
-    while (current) {
-      if (current.value === value) return index;
-      current = current.next;
-      index++;
-    }
+    // TODO: implement
     return -1;
   }
 
   /** Convert the list to an array. O(n) */
   toArray(): T[] {
-    const result: T[] = [];
-    let current = this.head;
-    while (current) {
-      result.push(current.value);
-      current = current.next;
-    }
-    return result;
+    // TODO: implement
+    return [];
   }
 
   get length(): number {

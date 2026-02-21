@@ -14,22 +14,25 @@ export class Stack<T> {
 
   /** Add an element to the top of the stack. O(1) */
   push(value: T): void {
-    this.items.push(value);
+    // TODO: implement
   }
 
   /** Remove and return the top element. Returns undefined if empty. O(1) */
   pop(): T | undefined {
-    return this.items.pop();
+    // TODO: implement
+    return undefined;
   }
 
   /** Return the top element without removing it. O(1) */
   peek(): T | undefined {
-    return this.items[this.items.length - 1];
+    // TODO: implement
+    return undefined;
   }
 
   /** Return true if the stack has no elements. O(1) */
   isEmpty(): boolean {
-    return this.items.length === 0;
+    // TODO: implement
+    return true;
   }
 
   get size(): number {

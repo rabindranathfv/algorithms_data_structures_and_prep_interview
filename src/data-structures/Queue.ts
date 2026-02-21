@@ -14,22 +14,25 @@ export class Queue<T> {
 
   /** Add an element to the back of the queue. O(1) */
   enqueue(value: T): void {
-    this.items.push(value);
+    // TODO: implement
   }
 
   /** Remove and return the front element. Returns undefined if empty. O(n) */
   dequeue(): T | undefined {
-    return this.items.shift();
+    // TODO: implement
+    return undefined;
   }
 
   /** Return the front element without removing it. O(1) */
   peek(): T | undefined {
-    return this.items[0];
+    // TODO: implement
+    return undefined;
   }
 
   /** Return true if the queue has no elements. O(1) */
   isEmpty(): boolean {
-    return this.items.length === 0;
+    // TODO: implement
+    return true;
   }
 
   get size(): number {

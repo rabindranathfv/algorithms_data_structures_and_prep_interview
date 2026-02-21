@@ -10,29 +10,12 @@
  *   - Open brackets are closed in the correct order.
  *   - Every close bracket has a corresponding open bracket.
  *
- * Time Complexity:  O(n) — single pass through the string
- * Space Complexity: O(n) — stack can hold up to n/2 elements
- *
  * Examples:
  *   isValid("()")      // true
  *   isValid("()[]{}")  // true
  *   isValid("(]")      // false
  */
 export function isValid(s: string): boolean {
-  const stack: string[] = [];
-  const closeToOpen: Record<string, string> = {
-    ')': '(',
-    '}': '{',
-    ']': '[',
-  };
-
-  for (const char of s) {
-    if (char in closeToOpen) {
-      if (stack.pop() !== closeToOpen[char]) return false;
-    } else {
-      stack.push(char);
-    }
-  }
-
-  return stack.length === 0;
+  // TODO: implement
+  return false;
 }

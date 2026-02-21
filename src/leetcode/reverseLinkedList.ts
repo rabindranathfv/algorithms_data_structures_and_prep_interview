@@ -4,9 +4,6 @@
  *
  * Reverse a singly linked list in-place and return the new head.
  *
- * Time Complexity:  O(n) — visit each node once
- * Space Complexity: O(1) — iterative, constant extra space
- *
  * Example:
  *   1 → 2 → 3 → 4 → 5  becomes  5 → 4 → 3 → 2 → 1
  */
@@ -19,17 +16,8 @@ export class ListNode {
 }
 
 export function reverseList(head: ListNode | null): ListNode | null {
-  let prev: ListNode | null = null;
-  let current = head;
-
-  while (current) {
-    const next = current.next;
-    current.next = prev;
-    prev = current;
-    current = next;
-  }
-
-  return prev;
+  // TODO: implement
+  return null;
 }
 
 /** Helper: build a linked list from an array */
