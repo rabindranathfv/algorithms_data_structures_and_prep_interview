@@ -35,7 +35,10 @@ export class LinkedList<T> {
   /** Insert a node at the end. O(n) */
   append(value: T): void {
     let current = this.head;
-    if (!current) return this.prepend(value);
+    if (!current) {
+      this.prepend(value);
+      return;
+    }
 
     while (current) {
       if (current.next === null) {
@@ -50,7 +53,7 @@ export class LinkedList<T> {
   /** Remove the first node with the given value. O(n) */
   delete(value: T): boolean {
     let current = this.head;
-    let previous = null;
+    let previous: ListNode<T> | null = null;
 
     if (!current) return false;
 
@@ -89,10 +92,8 @@ export class LinkedList<T> {
 
   /** Convert the list to an array. O(n) */
   toArray(): T[] {
-    let arr: T[] = [];
+    const arr: T[] = [];
     let current = this.head;
-
-    if (current === null) return arr;
 
     while (current) {
       arr.push(current.value);
