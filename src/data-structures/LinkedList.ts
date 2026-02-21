@@ -49,7 +49,26 @@ export class LinkedList<T> {
 
   /** Remove the first node with the given value. O(n) */
   delete(value: T): boolean {
-    // TODO: implement
+    let current = this.head;
+    let previous = null;
+
+    if (!current) return false;
+
+    while (current) {
+      if (current.value === value) {
+        if (previous) {
+          previous.next = current.next;
+          current.next = null;
+        } else {
+          this.head = current.next;
+          current.next = null;
+        }
+        this.size--;
+        return true;
+      }
+      previous = current;
+      current = current.next;
+    }
     return false;
   }
 
