@@ -69,4 +69,4 @@ src/
 
 ## 🧪 Tests
 
-80 tests across 8 test suites covering all implementations.
+80 tests across 8 test suites powered by **Vitest**. Data structure, sorting, and LeetCode tests are intentionally failing until you provide implementations — run `npm test` to check your progress.
