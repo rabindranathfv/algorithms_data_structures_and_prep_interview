@@ -15,15 +15,19 @@
  * @returns index of the target element, or -1 if not found
  */
 export function binarySearch(arr: number[], target: number): number {
-  let low = 0;
-  let high = arr.length - 1;
+  let first = 0;
+  let last = arr.length - 1;
 
-  while (low <= high) {
-    const mid = Math.floor((low + high) / 2);
+  while (first <= last) {
+    const mid = Math.floor((first + last) / 2);
 
-    if (arr[mid] === target) return mid;
-    if (arr[mid]! < target) low = mid + 1;
-    else high = mid - 1;
+    if (arr[mid] === target) {
+      return mid;
+    } else if (arr[mid]! < target) {
+      first += mid;
+    } else {
+      last -= mid;
+    }
   }
 
   return -1;
