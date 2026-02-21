@@ -1,0 +1,36 @@
+{
+  "name": "algorithms_data_structures_and_prep_interview",
+  "version": "1.0.0",
+  "description": "Practice core concepts: algorithms, data structures, BigO notation, and LeetCode challenges in TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rabindranathfv/algorithms_data_structures_and_prep_interview.git"
+  },
+  "keywords": ["algorithms", "data-structures", "typescript", "leetcode", "big-o"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rabindranathfv/algorithms_data_structures_and_prep_interview/issues"
+  },
+  "homepage": "https://github.com/rabindranathfv/algorithms_data_structures_and_prep_interview#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.5",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": ["**/__tests__/**/*.test.ts", "**/*.test.ts"],
+    "moduleFileExtensions": ["ts", "js", "json"]
+  }
+}
