@@ -1,5 +1,24 @@
 import { LinkedList } from "../../data-structures";
 
+/**
+ * Merge Sort for Singly Linked List
+ *
+ * Divides the linked list in half recursively, then merges sorted halves.
+ *
+ * ⚠️ This implementation uses index-based access (At(i)) which is O(i) per call
+ * in a singly linked list, making divide and merge O(n²) each instead of O(n).
+ *
+ * Time Complexity:
+ *   - Best:    O(n² log n)
+ *   - Average: O(n² log n)
+ *   - Worst:   O(n² log n)
+ *
+ * To achieve true O(n log n), use node pointers directly:
+ *   - Divide via slow/fast pointer (tortoise & hare) — O(n)
+ *   - Merge by walking both lists with next pointers — O(n)
+ *
+ * Space Complexity: O(n) — auxiliary linked lists used during merging and division
+ */
 export function mergeSortForSinglyLinkedList<T>(
   linkedList: LinkedList<T>,
 ): LinkedList<T> {
@@ -18,7 +37,6 @@ function divide<T>(list: LinkedList<T>): [LinkedList<T>, LinkedList<T>] {
   const leftList = new LinkedList<T>();
   const rightList = new LinkedList<T>();
 
-  let current = list.At(mid);
   for (let i = 0; i < list.length; i++) {
     if (i < mid) {
       leftList.append(list.At(i)!);
