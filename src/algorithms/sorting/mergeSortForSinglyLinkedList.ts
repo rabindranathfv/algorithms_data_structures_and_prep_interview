@@ -1,7 +1,6 @@
-import { truncate } from "node:fs";
 import { LinkedList } from "../../data-structures";
 
-function mergeSortForSinglyLinkedList<T>(
+export function mergeSortForSinglyLinkedList<T>(
   linkedList: LinkedList<T>,
 ): LinkedList<T> {
   if (linkedList.length <= 1) {
