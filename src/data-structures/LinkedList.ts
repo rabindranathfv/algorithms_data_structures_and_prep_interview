@@ -90,6 +90,23 @@ export class LinkedList<T> {
     return -1;
   }
 
+  isEmpty(): boolean {
+    return this.size === 0;
+  }
+
+  /** Return a value given an index of the list, or undefined if out of bounds. O(n) */
+  At(index: number): T | undefined {
+    if (index < 0 || index >= this.size) return undefined;
+    let current = this.head;
+    let i = 0;
+    while (current) {
+      if (i === index) return current.value;
+      current = current.next;
+      i++;
+    }
+    return undefined;
+  }
+
   /** Convert the list to an array. O(n) */
   toArray(): T[] {
     const arr: T[] = [];

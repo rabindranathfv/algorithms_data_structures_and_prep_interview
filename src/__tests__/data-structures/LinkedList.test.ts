@@ -179,6 +179,70 @@ describe("LinkedList", () => {
     });
   });
 
+  describe("isEmpty", () => {
+    it("returns true for a new list", () => {
+      expect(list.isEmpty()).toBe(true);
+    });
+
+    it("returns false after appending an element", () => {
+      list.append(1);
+      expect(list.isEmpty()).toBe(false);
+    });
+
+    it("returns false after prepending an element", () => {
+      list.prepend(1);
+      expect(list.isEmpty()).toBe(false);
+    });
+
+    it("returns true after deleting all elements", () => {
+      list.append(1);
+      list.append(2);
+      list.delete(1);
+      list.delete(2);
+      expect(list.isEmpty()).toBe(true);
+    });
+  });
+
+  describe("At", () => {
+    it("returns the value at a valid index", () => {
+      list.append(10);
+      list.append(20);
+      list.append(30);
+      expect(list.At(0)).toBe(10);
+      expect(list.At(1)).toBe(20);
+      expect(list.At(2)).toBe(30);
+    });
+
+    it("returns undefined for a negative index", () => {
+      list.append(1);
+      expect(list.At(-1)).toBeUndefined();
+    });
+
+    it("returns undefined for an index equal to the length", () => {
+      list.append(1);
+      list.append(2);
+      expect(list.At(2)).toBeUndefined();
+    });
+
+    it("returns undefined for an index beyond the length", () => {
+      list.append(1);
+      expect(list.At(100)).toBeUndefined();
+    });
+
+    it("returns undefined on an empty list", () => {
+      expect(list.At(0)).toBeUndefined();
+    });
+
+    it("returns the correct value after prepend and append", () => {
+      list.prepend(5);
+      list.append(10);
+      list.prepend(1);
+      expect(list.At(0)).toBe(1);
+      expect(list.At(1)).toBe(5);
+      expect(list.At(2)).toBe(10);
+    });
+  });
+
   describe("length", () => {
     it("starts at 0 for a new list", () => {
       expect(list.length).toBe(0);
