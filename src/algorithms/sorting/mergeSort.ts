@@ -59,7 +59,7 @@ function verifyMergeSort(arr: number[]): boolean {
   if (arr.length <= 1) {
     return true;
   } else {
-    return arr[0] < arr[1] && verifyMergeSort(arr.slice(1));
+    return arr[0] <= arr[1] && verifyMergeSort(arr.slice(1));
   }
 }
 
