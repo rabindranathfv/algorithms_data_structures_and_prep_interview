@@ -2,6 +2,7 @@ import { bubbleSort } from "../../algorithms/sorting/bubbleSort";
 import { mergeSort } from "../../algorithms/sorting/mergeSort";
 import { mergeSortForSinglyLinkedList } from "../../algorithms/sorting/mergeSortForSinglyLinkedList";
 import { quickSort } from "../../algorithms/sorting/quickSort";
+import { selectionSort } from "../../algorithms/sorting/selectSort";
 import { LinkedList } from "../../data-structures/LinkedList";
 
 const unsorted = [64, 34, 25, 12, 22, 11, 90];
@@ -10,6 +11,7 @@ const sorted = [11, 12, 22, 25, 34, 64, 90];
 describe.each([
   // ['bubbleSort', bubbleSort],
   ["mergeSort for Arrays", mergeSort],
+  ["selectionSort for Arrays", selectionSort],
   // ['quickSort', quickSort],
 ])("%s", (_name, sortFn) => {
   it("sorts an unsorted array", () => {

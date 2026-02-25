@@ -12,7 +12,7 @@
  * Space Complexity: O(n) — auxiliary array used for result
  */
 
-function selectionSort(arr: number[]): number[] {
+export function selectionSort(arr: number[]): number[] {
   const working = arr.slice();
   const result: number[] = [];
   while (working.length > 0) {
@@ -29,7 +29,6 @@ function findLowest(list: number[]): number {
     if (list[i] < list[lowestIndex]) {
       lowestIndex = i;
     }
-    i++;
   }
   return lowestIndex;
 }
@@ -38,7 +37,7 @@ function verifySorting(list: number[]): boolean {
   if (list.length === 1) {
     return true;
   } else {
-    return list[0] < list[1] && verifySorting(list.slice(1));
+    return list[0] <= list[1] && verifySorting(list.slice(1));
   }
 }
 

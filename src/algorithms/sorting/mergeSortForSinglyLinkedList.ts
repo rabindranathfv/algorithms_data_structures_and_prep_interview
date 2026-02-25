@@ -99,7 +99,7 @@ function verifyMergeSortForSinglyLinkedList<T>(list: LinkedList<T>): boolean {
       nextList.append(list.At(i)!);
     }
     return (
-      list.At(0)! < list.At(1)! && verifyMergeSortForSinglyLinkedList(nextList)
+      list.At(0)! <= list.At(1)! && verifyMergeSortForSinglyLinkedList(nextList)
     );
   }
 }
