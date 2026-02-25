@@ -48,6 +48,8 @@ function divide<T>(list: LinkedList<T>): [LinkedList<T>, LinkedList<T>] {
   return [leftList, rightList];
 }
 
+// TODO: Implemente Divide v2 using slow/fast pointers for O(n) division
+
 function merge<T>(
   leftList: LinkedList<T>,
   rightList: LinkedList<T>,
@@ -78,6 +80,8 @@ function merge<T>(
 
   return resultList;
 }
+
+// TODO: Implement Merge v2 using slow/fast pointers for O(n) division instead of At method
 
 let unsortedList = new LinkedList<number>();
 [5, 3, 8, 1, 2].forEach((num) => unsortedList.append(num));
