@@ -20,11 +20,11 @@ export function quickSortRec(arr: number[]): number[] {
 
   let pivot = arr[0];
   let lessThanPivot: number[] = [];
-  let GreaterThanPivot: number[] = [];
+  let greaterThanPivot: number[] = [];
 
   for (let i = 1; i < arr.length; i++) {
     if (pivot < arr[i]) {
-      GreaterThanPivot.push(arr[i]);
+      greaterThanPivot.push(arr[i]);
     } else {
       lessThanPivot.push(arr[i]);
     }
@@ -33,6 +33,6 @@ export function quickSortRec(arr: number[]): number[] {
   return [
     ...quickSortRec(lessThanPivot),
     pivot,
-    ...quickSortRec(GreaterThanPivot),
+    ...quickSortRec(greaterThanPivot),
   ];
 }
