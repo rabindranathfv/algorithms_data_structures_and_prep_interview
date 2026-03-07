@@ -1,7 +1,7 @@
 import { bubbleSort } from "../../algorithms/sorting/bubbleSort";
 import { mergeSort } from "../../algorithms/sorting/mergeSort";
 import { mergeSortForSinglyLinkedList } from "../../algorithms/sorting/mergeSortForSinglyLinkedList";
-import { quickSort } from "../../algorithms/sorting/quickSort";
+import { quickSortRec } from "../../algorithms/sorting/quickSortRec";
 import { selectionSort } from "../../algorithms/sorting/selectSort";
 import { LinkedList } from "../../data-structures/LinkedList";
 
@@ -12,7 +12,7 @@ describe.each([
   // ['bubbleSort', bubbleSort],
   ["mergeSort for Arrays", mergeSort],
   ["selectionSort for Arrays", selectionSort],
-  // ['quickSort', quickSort],
+  ["quickSort for Arrays", quickSortRec],
 ])("%s", (_name, sortFn) => {
   it("sorts an unsorted array", () => {
     expect(sortFn([...unsorted])).toEqual(sorted);
